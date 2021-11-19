@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mainlayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <ImageView
+                android:layout_margin="5dp"
+                android:id="@+id/imageView"
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars" />
+            <LinearLayout
+              android:layout_margin="5dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginBottom="10dp"
+                    android:background="#F4F4F4"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="2dp"
+                    app:strokeWidth="0dp"
+                    >
+                    <TextView
+                        android:background="#F4F4F4"
+                        android:gravity="center"
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="사용자 이름" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+
+                    android:background="#F4F4F4"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="2dp"
+                    app:strokeWidth="0dp"
+                    >
+                    <TextView
+                        android:background="#F4F4F4"
+                        android:gravity="center"
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="장애 종류, 등급" />
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/mapsearch"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:background="#FFFAC9"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="시설찾기" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/forum"
+                android:clickable="true"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:background="#F7F7F7"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="게시판" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/select"                android:clickable="true"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:background="#FCEEEE"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="종목찾기" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:background="#DAF3FF"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="체육대회 확인" />
+        </LinearLayout>
+
+        <CalendarView
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
