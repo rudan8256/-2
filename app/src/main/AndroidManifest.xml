@@ -27,7 +27,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD3mWbx9X_uruV9Wha1vgW-qU54d48sA6U" />
+            android:value="AIzaSyAbuzQZRr07cSHvkfEnZOmyFyThuaDrCwg" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -38,7 +38,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
     </application>
 
 </manifest>

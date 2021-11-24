@@ -7,6 +7,8 @@
     tools:context=".Mainlayout">
 
     <LinearLayout
+        android:backgroundTint="#FFDDDDDD"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -47,7 +49,7 @@
                     app:strokeWidth="0dp"
                     >
                     <TextView
-                        android:background="#F4F4F4"
+                        android:background="@drawable/roundbutton"
                         android:gravity="center"
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
@@ -68,7 +70,7 @@
                     app:strokeWidth="0dp"
                     >
                     <TextView
-                        android:background="#F4F4F4"
+                        android:background="@drawable/roundbutton"
                         android:gravity="center"
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
@@ -91,19 +93,20 @@
 
             <LinearLayout
                 android:id="@+id/mapsearch"
-                android:gravity="center"
-                android:layout_margin="5dp"
-                android:background="#FFFAC9"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbutton"
+                android:backgroundTint="#FFFAC9"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
-                    android:gravity="center"
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="시설찾기" />
             </LinearLayout>
 
@@ -112,7 +115,8 @@
                 android:clickable="true"
                 android:gravity="center"
                 android:layout_margin="5dp"
-                android:background="#F7F7F7"
+                android:background="@drawable/roundbutton"
+                android:backgroundTint="#F7F7F7"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -127,10 +131,12 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/select"                android:clickable="true"
+                android:id="@+id/select"
+                android:clickable="true"
                 android:gravity="center"
                 android:layout_margin="5dp"
-                android:background="#FCEEEE"
+                android:background="@drawable/roundbutton"
+                android:backgroundTint="#FCEEEE"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -152,6 +158,8 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
+                android:background="@drawable/roundbutton"
+                android:backgroundTint="@color/teal_200"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
