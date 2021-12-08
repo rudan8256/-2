@@ -13,16 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Programing">
         <activity
+            android:name=".Image_zoom"
+            android:exported="true" />
+        <activity
+            android:name=".Post_write"
+            android:exported="true" />
+        <activity
+            android:name=".Board"
+            android:exported="true" />
+        <activity
             android:name=".Register"
             android:exported="true" />
         <activity
             android:name=".Login"
-            android:exported="true" />
-        <activity
-            android:name=".Select"
-            android:exported="true" />
-        <activity
-            android:name=".Mainlayout"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +33,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Select"
+            android:exported="true" />
+        <activity
+            android:name=".Mainlayout"
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

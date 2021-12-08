@@ -1,308 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Mainlayout"
-    android:background="@drawable/homebackground">
+    >
 
-    <ScrollView
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_round"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="10dp"
+
+        android:translationZ="9sp"
+        app:cardCornerRadius="40dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/bottomlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bottomlayout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="14dp"
+            android:src="@drawable/ic_carbon_user_avatar_filled" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:translationZ="0dp"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="300dp"
+        android:background="@drawable/login_upround"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <LinearLayout
-
-        android:backgroundTint="#FFDDDDDD"
-        android:layout_marginTop="20dp"
+        android:id="@+id/bottomlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="620sp"
+        android:background="@drawable/home_pupleround"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="90sp"
             android:orientation="horizontal">
 
-
-            <androidx.cardview.widget.CardView
-                android:layout_weight="1"
-                android:layout_marginRight="15dp"
-                app:cardCornerRadius="10dp"
-                android:layout_width="0dp"
-                android:layout_height="150dp">
-
-                <ImageView
-                    android:src="@drawable/ic_carbon_user_avatar_filled"
-                    android:layout_margin="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <LinearLayout
-                android:layout_marginLeft="15dp"
-                android:layout_weight="1"
-                android:background="@drawable/roundbutton"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="150dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:gravity="center"
-                            android:id="@+id/textView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="사용자 이름" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:gravity="center"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="41dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_baseline_settings_24" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:gravity="center"
-                            android:id="@+id/textView3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="장애 종류, 등급" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="나의 티어" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
             <androidx.cardview.widget.CardView
-                android:layout_weight="1"
-                android:layout_marginRight="15dp"
-                app:cardCornerRadius="10dp"
-                android:layout_width="0dp"
-                android:layout_height="150dp">
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:id="@+id/mapsearch"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
 
-                <LinearLayout
-                    android:id="@+id/select"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:background="@drawable/roundbutton"
-                    android:backgroundTint="#FEF5F5"
-                    android:layout_weight="1"
+                app:cardCornerRadius="15dp">
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:gravity="center"
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="종목찾기" />
-                </LinearLayout>
+                    android:gravity="center"
+                    android:text="시설 찾기" />
 
             </androidx.cardview.widget.CardView>
 
-
-            <LinearLayout
-                android:layout_marginLeft="15dp"
-                android:layout_weight="1"
-                android:background="@drawable/roundbutton"
-                android:gravity="center"
-                android:layout_width="0dp"
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:orientation="vertical">
+                android:id="@+id/sport_list"
+                app:cardCornerRadius="15dp">
 
-                <LinearLayout
-                    android:layout_weight="1"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="운동 리스트" />
 
-                    <LinearLayout
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="#FFFAC9"
-                        android:id="@+id/mapsearch"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-
-
-
-                            <TextView
-                                android:id="@+id/textView4"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="시설찾기" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="운동하기" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="#5003DAC5"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="체육대회" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:backgroundTint="#56E3A3EE"
-                        android:id="@+id/forum"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/roundwidget"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="게시판" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
 
-
-
-        <CalendarView
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:elevation="10dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/board"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:text="게시판" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/oylmpic_list"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:gravity="center"
+                    android:text="패럴림픽 종목" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
     </LinearLayout>
 
-    </ScrollView>
-</LinearLayout>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

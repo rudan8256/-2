@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class Register extends AppCompatActivity {
 
     private FirebaseAuth mFirebaseAuth; // 파이어베이스 인증
-    private EditText mEtEmail, mEtPwd,mEtPwd2,enick; // 회원가입 입력필드
+    private EditText mEtEmail, rPwd1,rPwd2,mEtPwd2,enick; // 회원가입 입력필드
     private LinearLayout mBtnRegister; // 회원가입 버튼
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private String retVal;
@@ -38,7 +38,8 @@ public class Register extends AppCompatActivity {
 
         mFirebaseAuth=FirebaseAuth.getInstance();
         mEtEmail=findViewById(R.id.r_email);
-        mEtPwd=findViewById(R.id.r_pwd);
+        rPwd1=findViewById(R.id.r_pwd1);
+        rPwd2=findViewById(R.id.r_pwd2);
         mBtnRegister=findViewById(R.id.btn_register);
         enick=findViewById(R.id.r_nick);
 
@@ -47,8 +48,8 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 //회원가입 처리 시작
                 String strEmail=mEtEmail.getText().toString();
-                String strPwd1=mEtPwd.getText().toString();
-                String strPwd2=mEtPwd2.getText().toString();
+                String strPwd1=rPwd1.getText().toString();
+                String strPwd2=rPwd2.getText().toString();
                 String nickname=enick.getText().toString();
 
                 if(strPwd1.equals(strPwd2) && !TextUtils.isEmpty(nickname)) {
@@ -70,10 +71,17 @@ public class Register extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
+                    Log.e("###",strEmail);
+                    Log.e("###",retVal);
+
+
+
+
                     mFirebaseAuth.createUserWithEmailAndPassword(strEmail, retVal).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()) {
+
                                 FirebaseUser user = mFirebaseAuth.getCurrentUser();
                                 //String idToken, String emailId, String password, String nickname, ArrayList<String> liked_Post
 

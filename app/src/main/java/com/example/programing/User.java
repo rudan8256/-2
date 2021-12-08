@@ -6,14 +6,14 @@ public class User {
     private String password; // 비밀번호
     private String nickname;
 
-    User(){
+    public  User(){
         this.emailId="";
         this.idToken="";
         this.password="";
         this.nickname="";
     }
 
-    User(String idToken, String emailId, String password,String nickname)
+    public User(String idToken, String emailId, String password,String nickname)
     {
         this.emailId=emailId;
         this.idToken=idToken;

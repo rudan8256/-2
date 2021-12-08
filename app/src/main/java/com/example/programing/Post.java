@@ -90,7 +90,7 @@ public class Post {
         this.image_url= new ArrayList<>();
     }
 
-    public Post(String writer_id, String title, String contents, String p_nickname, String like, ArrayList<Comment> comments,  ArrayList<String> image_url) {
+    public Post(String writer_id, String title, String contents, String p_nickname, String like, ArrayList<Comment> comments,  ArrayList<String> image_url, Timestamp timestamp) {
         this.writer_id = writer_id;
         this.title = title;
         this.contents = contents;
