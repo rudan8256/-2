@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+    <LinearLayout
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/startbuttonround"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408">
+
+        <EditText
+            android:id="@+id/r_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="null"
+            android:hint="이메일 형식을 지켜 입력해주세요" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529">
+
+        <EditText
+            android:id="@+id/r_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="null"
+            android:hint="6자리 이상 입력" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.643">
+
+        <EditText
+            android:id="@+id/r_nick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="null"
+            android:hint="닉네임 입력" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/startbuttonround"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.858">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="null"
+            android:text="로그인 하기" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
