@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/cc_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:paddingLeft="10dp"
+            android:id="@+id/iv_point"
+            android:visibility="invisible"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ccoment_arrow" />
+
+        <LinearLayout
+            android:background="@drawable/frag1_btn"
+            android:layout_margin="8dp"
+            android:id="@+id/comment_layout"
+            android:layout_weight="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:id="@+id/comment_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/comment_item_photo"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_carbon_user_avatar_filled" />
+
+
+                    <TextView
+                        android:id="@+id/comment_item_nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:includeFontPadding="false" />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="top"
+                >
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/comment_del"
+                    android:clickable="true"
+                    android:id="@+id/btn_c_comment"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#494949"
+                        android:textSize="8dp"
+                        android:text="대댓글"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/comment_del"
+                    android:id="@+id/btn_delete"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#494949"
+                        android:textSize="8dp"
+                        android:text="삭제"/>
+
+                </LinearLayout>
+
+
+
+             </LinearLayout>
+
+         </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:visibility="visible"
+        android:id="@+id/line_list"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F0F0F0"/>
+</LinearLayout>

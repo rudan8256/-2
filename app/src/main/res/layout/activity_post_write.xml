@@ -144,8 +144,8 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
-
-                    android:backgroundTint="@color/main_color"
+                    android:background="@drawable/ic_baseline_photo_camera_24"
+                    android:backgroundTint="@color/purple_200"
                     android:gravity="center" />
             </LinearLayout>
 
@@ -160,8 +160,9 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
+                    android:background="@drawable/ic_baseline_image_24"
                     android:layout_marginTop="15dp"
-                    android:backgroundTint="@color/main_color"
+                    android:backgroundTint="@color/purple_200"
                     android:gravity="center" />
             </LinearLayout>
 

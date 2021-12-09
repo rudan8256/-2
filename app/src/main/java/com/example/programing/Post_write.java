@@ -94,8 +94,7 @@ public class Post_write extends AppCompatActivity {
         post_gallery=findViewById(R.id.post_gallery);
         photo_list  =findViewById(R.id.photo_list);
 
-        Intent intent = getIntent();
-        forum_sort = intent.getExtras().getString("게시판");
+
         storage=FirebaseStorage.getInstance();
 
         storageReference=storage.getReferenceFromUrl("gs://programing-a07fe.appspot.com/");
@@ -176,7 +175,7 @@ public class Post_write extends AppCompatActivity {
 
 
         if (mAuth.getCurrentUser() != null) {
-            String PostID = mStore.collection(forum_sort).document().getId();//제목이 같아도 게시글이 겹치지않게
+            String PostID = mStore.collection("board").document().getId();//제목이 같아도 게시글이 겹치지않게
             final Post[] post = new Post[1];
             DocumentReference docRef1 = mStore.collection("user").document(mAuth.getUid());
             docRef1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -189,8 +188,8 @@ public class Post_write extends AppCompatActivity {
                     Date date = new Date(datetime);
                     Timestamp timestamp = new Timestamp(date);
 
-                    post[0] = new Post(mAuth.getUid(), mTitle.getText().toString(), mContents.getText().toString(), userAccount.getNickname(), "0",   new ArrayList<>(), image_urllist,timestamp );
-                    mStore.collection(forum_sort).document(PostID).set(post[0]);
+                    post[0] = new Post(mAuth.getUid(), mTitle.getText().toString(), mContents.getText().toString(), userAccount.getNickname(), "0",   new ArrayList<>(), image_urllist,timestamp ,PostID,0);
+                    mStore.collection("board").document(PostID).set(post[0]);
 
                 }
             });

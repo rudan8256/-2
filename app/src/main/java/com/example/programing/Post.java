@@ -12,7 +12,27 @@ public class Post {
     private String like; //게시글 좋아요 개수
     private Timestamp timestamp;
     private ArrayList<Comment> comments;
+    private int coment_Num;
+
+    public int getComent_Num() {
+        return coment_Num;
+    }
+
+    public void setComent_Num(int coment_Num) {
+        this.coment_Num = coment_Num;
+    }
+
     private ArrayList<String> image_url;
+    private String post_id;
+
+    public String getPost_id() {
+        return post_id;
+    }
+
+    public void setPost_id(String post_id) {
+        this.post_id = post_id;
+    }
+
 
     public String getWriter_id() {
         return writer_id;
@@ -88,9 +108,11 @@ public class Post {
         this.timestamp = null;
         this.comments = new ArrayList<>();
         this.image_url= new ArrayList<>();
+        this.post_id = "";
+        this.coment_Num=0;
     }
 
-    public Post(String writer_id, String title, String contents, String p_nickname, String like, ArrayList<Comment> comments,  ArrayList<String> image_url, Timestamp timestamp) {
+    public Post(String writer_id, String title, String contents, String p_nickname, String like, ArrayList<Comment> comments,  ArrayList<String> image_url, Timestamp timestamp,String post_id,int coment_Num) {
         this.writer_id = writer_id;
         this.title = title;
         this.contents = contents;
@@ -99,6 +121,7 @@ public class Post {
         this.timestamp = timestamp;
         this.comments = comments;
         this.image_url = image_url;
-
+        this.post_id=post_id;
+        this.coment_Num= coment_Num;
     }
 }
