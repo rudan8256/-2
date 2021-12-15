@@ -2,6 +2,7 @@ package com.example.programing;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +27,14 @@ public class MultiImageAdapter extends RecyclerView.Adapter<MultiImageAdapter.Vi
     }
 
     // 아이템 뷰를 저장하는 뷰홀더 클래스.
-    public class ViewHolder extends RecyclerView.ViewHolder {
+     class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
 
         ViewHolder(View itemView) {
             super(itemView) ;
+
+            Log.e("%%%", "멀티 이미지 함수 실행함?");
 
             // 뷰 객체에 대한 참조.
             image = itemView.findViewById(R.id.image);
@@ -50,8 +53,6 @@ public class MultiImageAdapter extends RecyclerView.Adapter<MultiImageAdapter.Vi
             });
         }
     }
-
-;
 
 
     // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.

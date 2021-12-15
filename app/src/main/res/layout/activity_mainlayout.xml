@@ -10,7 +10,7 @@
     <TextView
         android:translationZ="20dp"
         android:id="@+id/user_nick"
-        android:text="경무님!"
+
         android:textSize="40sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"

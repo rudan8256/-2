@@ -86,8 +86,6 @@ public class Post_Comment extends AppCompatActivity implements View.OnClickListe
 
 
 
-
-
         Intent intent = getIntent();//데이터 전달받기
         post_id = intent.getStringExtra("post_id");
         photo_list=findViewById(R.id.photo_list);

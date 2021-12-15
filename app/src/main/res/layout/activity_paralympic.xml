@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF2F4"
+    tools:context=".Paralympic">
+
+    <LinearLayout
+        android:translationZ="2dp"
+        android:background="@drawable/twoside_round_bottom"
+        android:paddingBottom="50dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:src="@drawable/back_light_arrow_icon_131562"
+                android:paddingRight="20dp"
+                android:layout_width="50dp"
+                android:layout_height="25dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="25dp"
+            android:text="패럴림픽 종목"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pp_list_rr"
+            >
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/complete_btn"
+            android:layout_margin="6dp"
+          android:elevation="3dp"
+            android:background="@drawable/complete_btn"
+            android:gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="40dp">
+
+            <TextView
+                android:textColor="#7B7B7B"
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="선택"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
