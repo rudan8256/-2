@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/write_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -20,9 +20,10 @@
             android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
             android:includeFontPadding="false"
-          android:src="@drawable/write_post_ic">
+          android:background="@drawable/write_post_ic"
+          >
 
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

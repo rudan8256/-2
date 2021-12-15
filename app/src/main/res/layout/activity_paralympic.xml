@@ -61,6 +61,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:textSize="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sibal"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +76,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/complete_btn"
+            android:id="@+id/listsel_btn"
             android:layout_margin="6dp"
           android:elevation="3dp"
             android:background="@drawable/complete_btn"

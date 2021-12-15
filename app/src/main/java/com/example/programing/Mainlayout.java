@@ -79,11 +79,13 @@ public class Mainlayout extends AppCompatActivity {
             }
         });
 
-        //스포츠 종목
+        //나의 운동리스트
         sport_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(getApplicationContext(), MyList.class);
+                startActivity(intent);
             }
         });
 

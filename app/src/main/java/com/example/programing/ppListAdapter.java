@@ -46,7 +46,7 @@ public class ppListAdapter extends RecyclerView.Adapter<ppListAdapter.ViewHolder
                             mListener.onItemClick(v, pos);
                         }
 
-                        if(mSelectedItems.get(pos,false)){
+                        if(mSelectedItems.get(pos)){
                             mSelectedItems.put(pos,false);
                             itemView.findViewById(R.id.layout_back).setBackgroundColor(Color.WHITE);
                            ppname.setTextColor(Color.parseColor("#E96A7B"));
