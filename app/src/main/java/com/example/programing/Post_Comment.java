@@ -62,6 +62,9 @@ public class Post_Comment extends AppCompatActivity implements View.OnClickListe
     DocumentReference docRef;
     private String comment_p, post_t, post_num, comment_post;//
     private SwipeRefreshLayout swipeRefreshLayout;
+    private RecyclerView picklist_recy;
+    private MylistAdapter mylistAdapter;
+    private ArrayList<UserToDoList> inputlist_data = new ArrayList<>();
 
 
     @Override
@@ -83,7 +86,7 @@ public class Post_Comment extends AppCompatActivity implements View.OnClickListe
         likeText = (TextView) findViewById(R.id.like_text);                 //좋아요 개수 보여주는 텍스트
         zoomLayout = (ZoomLayout) findViewById(R.id.post_zoomlayout);
         mCommentRecyclerView = findViewById(R.id.comment_recycler);         //코멘트 리사이클러뷰
-
+        picklist_recy = findViewById(R.id.sel_postpicklist);
 
 
         Intent intent = getIntent();//데이터 전달받기
@@ -213,6 +216,14 @@ public class Post_Comment extends AppCompatActivity implements View.OnClickListe
                 Cdata = post.getComments();
                 contentAdapter = new PostCommentAdapter(Cdata, Post_Comment.this, docRef);//mDatas라는 생성자를 넣어줌
                 mCommentRecyclerView.setAdapter(contentAdapter);
+
+
+                inputlist_data.add(post.getUserToDoList());
+
+                mylistAdapter = new MylistAdapter(inputlist_data,getApplicationContext());
+                picklist_recy.setAdapter(mylistAdapter);
+                picklist_recy.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+
             }
         });
     }

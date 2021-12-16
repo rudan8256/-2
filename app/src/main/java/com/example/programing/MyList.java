@@ -35,7 +35,7 @@ public class MyList extends AppCompatActivity {
     ArrayList<UserToDoList> dolistData = new ArrayList<>();
     LinearLayout into_sportlist;
     private ArrayList<UserToDoList> userToDoLists;
-    MylistAdapter mylistAdapter;
+    private MylistAdapter mylistAdapter;
     User userdata;
 
     @Override

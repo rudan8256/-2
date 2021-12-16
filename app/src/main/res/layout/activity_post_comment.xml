@@ -6,28 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Post_Comment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tb_post_comment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-
-    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+       android:layout_height="wrap_content"
         android:background="@color/line"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/refresh_commnet"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_post_comment" />
+       />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh_comment"
@@ -52,6 +42,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:id="@+id/linearLayout9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -175,17 +166,11 @@
                             tools:text="본문내용입니다" />
                     </LinearLayout>
 
-
-
-                    <Button
-                        android:id="@+id/btn_post_treeview"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sel_postpicklist"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="20dp"
-                        android:background="#FFFFFF"
-                        android:text="트리 보기"
-                        android:visibility="gone"/>
+                        android:layout_height="wrap_content"/>
+
 
 
                     <androidx.recyclerview.widget.RecyclerView

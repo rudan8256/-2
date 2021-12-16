@@ -74,12 +74,16 @@ public class Post_write extends AppCompatActivity {
     private Dialog addTreeDialog;
     private RecyclerView postAddTreeRV;
     private LinearLayoutManager linearLayoutManager;
+    private  UserToDoList sel_DoLists = new UserToDoList();
 
     private ArrayList<Uri> uriList = new ArrayList<>();
     private RecyclerView photo_list;
     private MultiImageAdapter photoadapter;
     StorageReference storageReference;
     private ArrayList<String>image_urllist = new ArrayList<>();
+    private MylistPickAdapter mylistAdapter;
+    ArrayList<UserToDoList> dolistData = new ArrayList<>();
+    User userdata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,9 +153,53 @@ public class Post_write extends AppCompatActivity {
         post_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                popUp_List();
             }
         });
+    }
+
+    void popUp_List(){
+
+        mStore.collection("user").document(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    userdata = task.getResult().toObject(User.class);
+
+                    dolistData = userdata.getUserToDoLists();
+
+
+                    Dialog dialog = new Dialog(Post_write.this);
+                    dialog.setContentView(R.layout.dialog_postwrite_list);
+
+                    RecyclerView recyclerView = dialog.findViewById(R.id.recy_postwritelist);
+
+
+                    mylistAdapter = new MylistPickAdapter(dolistData,getApplicationContext());
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+                    recyclerView.setAdapter(mylistAdapter);
+                    mylistAdapter.notifyDataSetChanged();
+
+
+                    mylistAdapter.setOnItemClickListener
+                            (new MylistPickAdapter.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(View v, int pos) {
+
+
+                                    sel_DoLists=dolistData.get(pos);
+                                    dialog.dismiss();
+                                    Toast.makeText(getApplicationContext(), "선택되었습니다", Toast.LENGTH_LONG).show();
+                                }
+                            });
+
+
+                    dialog.show();
+                }
+            }
+            });
+
+
     }
 
     private void useGallery() {
@@ -195,7 +243,7 @@ public class Post_write extends AppCompatActivity {
                     Timestamp timestamp = new Timestamp(date);
 
                     post[0] = new Post(mAuth.getUid(), mTitle.getText().toString(), mContents.getText().toString(),
-                            userAccount.getNickname(), "0",   new ArrayList<>(), image_urllist,timestamp ,PostID,0,new UserToDoList());
+                            userAccount.getNickname(), "0",   new ArrayList<>(), image_urllist,timestamp ,PostID,0,sel_DoLists);
 
                     mStore.collection("board").document(PostID).set(post[0]);
 
