@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -39,7 +41,7 @@ public class sportList extends AppCompatActivity {
 
     private RecyclerView ppRc;
     private sportListAdapter listadapter;
-    private LinearLayout listsel_btn,complete_btn;
+    private LinearLayout listsel_btn,complete_btn,link_btn;
     private ImageView Backpress;
     private TextView date_txt,time_txt,map_txt,sibal;
 
@@ -63,37 +65,31 @@ public class sportList extends AppCompatActivity {
         listsel_btn=findViewById(R.id.listsel_btn);
         ppRc=findViewById(R.id.pp_list_rr);
         Backpress = findViewById(R.id.btn_back);
+        link_btn = findViewById(R.id.link_btn);
+
+        link_btn.setVisibility(View.INVISIBLE);
 
         getWindow().setStatusBarColor(Color.WHITE);
 
         ArrayList<Sport> s_list = new ArrayList<>();
 
-        s_list.add(new Sport("골볼",R.drawable.pp_goalball));
-        s_list.add(new Sport("보치아",R.drawable.pp_boccia));
-        s_list.add(new Sport("배드민턴",R.drawable.pp_badminton));
-        s_list.add(new Sport("사격",R.drawable.pp_shooting));
-        s_list.add(new Sport("사이클 도로",R.drawable.pp_cyclingroad));
-        s_list.add(new Sport("사이클 트랙",R.drawable.pp_cyclingtrack));
 
-        s_list.add(new Sport("수영",R.drawable.pp_swimming));
-        s_list.add(new Sport("승마",R.drawable.pp_equestrian));
-        s_list.add(new Sport("양궁",R.drawable.pp_archery));
-        s_list.add(new Sport("역도",R.drawable.pp_powerlifting));
-        s_list.add(new Sport("유도",R.drawable.pp_judo));
-        s_list.add(new Sport("육상",R.drawable.pp_athleticsframe));
+        s_list.add(new Sport(" 양궁 ",R.drawable.didrnd,"","https://www.archery.or.kr/archer/main/archeryMan.do"));
+        s_list.add(new Sport(" 탁구 ",R.drawable.xkrrn,"","http://www.koreatta.or.kr/servlets/org/Main"));
+        s_list.add(new Sport("스케이트보드",R.drawable.tmzpdlxm,"","https://www.koreaskateboard.or.kr/"));
+        s_list.add(new Sport(" 수영 ",R.drawable.tndud,"","http://www.koreaswim.or.kr/"));
+        s_list.add(new Sport(" 태권도 ",R.drawable.xornjseh,"","http://www.koreataekwondo.org/"));
 
-        s_list.add(new Sport("조정",R.drawable.pp_rowing));
-        s_list.add(new Sport("좌식배구",R.drawable.pp_sittingvolleyball));
-        s_list.add(new Sport("축구(5인)",R.drawable.pp_football5aside));
-        s_list.add(new Sport("카느 스프린트",R.drawable.pp_canoesprint));
-        s_list.add(new Sport("탁구",R.drawable.pp_tabletennis));
-        s_list.add(new Sport("태권도",R.drawable.pp_taekwondo));
+        s_list.add(new Sport(" 야구 ",R.drawable.dirn,"","http://www.korea-baseball.com/"));
+        s_list.add(new Sport(" 육상 " ,R.drawable.dbrtkd,"","http://www.kaaf.or.kr/ver3/main/main.asp"));
+        s_list.add(new Sport(" 수영 ",R.drawable.tndud,"","http://www.koreaswim.or.kr/"));
+        s_list.add(new Sport(" 펜싱 ",R.drawable.vpstld,"","https://fencing.sports.or.kr/"));
+        s_list.add(new Sport(" 유도 ",R.drawable.dbeh,"","http://judo.sports.or.kr/"));
+        s_list.add(new Sport(" 사격 ",R.drawable.tkrur,"","https://www.shooting.or.kr/"));
 
-        s_list.add(new Sport("트라이애슬론",R.drawable.pp_triathlon));
-        s_list.add(new Sport("휠체어농구",R.drawable.pp_wheelchairbasketball));
-        s_list.add(new Sport("휠체어럭비",R.drawable.pp_wheelchairrugby));
-        s_list.add(new Sport("휠체어테니스",R.drawable.pp_wheelchairtennis));
-        s_list.add(new Sport("휠체어펜싱",R.drawable.pp_wheelchairfencing));
+        s_list.add(new Sport(" 복싱 ",R.drawable.qhrtld,"","http://boxing.sports.or.kr/"));
+        s_list.add(new Sport(" 배구 ",R.drawable.volleyball,"","https://www.kva.or.kr/"));
+        s_list.add(new Sport(" 축구 ",R.drawable.cnrrn,"","https://www.kfa.or.kr/"));
 
 
 
@@ -121,7 +117,6 @@ public class sportList extends AppCompatActivity {
         });
 
 
-        sibal=findViewById(R.id.sibal);
 
         //해당 종목을 선택했을떄
         listadapter.setOnItemClickListener(new sportListAdapter.OnItemClickListener() {
@@ -137,13 +132,27 @@ public class sportList extends AppCompatActivity {
                     click=true;
                     selnum=pos;
 
-                    sibal.setText("클릭함");
+                    link_btn.setVisibility(View.VISIBLE);
+                    link_btn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s_list.get(pos).getUri_content()));
+                            startActivity(intent);
+                        }
+                    });
 
 
                 }
                 else if(selnum != pos && click){
                     selnum=pos;
-                    sibal.setText("이동함");
+                    link_btn.setVisibility(View.VISIBLE);
+                    link_btn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s_list.get(pos).getUri_content()));
+                            startActivity(intent);
+                        }
+                    });
 
                 }
                 else{
@@ -151,7 +160,8 @@ public class sportList extends AppCompatActivity {
                     click=false;
                     selnum =-1;
 
-                    sibal.setText("클릭품");
+                    link_btn.setVisibility(View.INVISIBLE);
+
                 }
 
 
@@ -211,7 +221,6 @@ public class sportList extends AppCompatActivity {
                                         date_txt.setText(year + "-"+(month+1)+"-"+dayOfMonth);
                                         sel_date=year + "-"+(month+1)+"-"+dayOfMonth;
 
-                                        Toast.makeText(getApplicationContext(),"select date : "+ year + "-"+(month+1)+"-"+dayOfMonth,Toast.LENGTH_LONG).show();
                                     }
                                 },
                                 calendar.get(Calendar.YEAR),
@@ -287,6 +296,7 @@ public class sportList extends AppCompatActivity {
                                         mStore.collection("user").document(mAuth.getCurrentUser().getUid()).set(inputdata, SetOptions.merge());
 
                                         listdialog.dismiss();
+                                        finish();
                                     }
                                 }
                             });
@@ -309,10 +319,10 @@ public class sportList extends AppCompatActivity {
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             // 설정버튼 눌렀을 때
 
-            sel_time= String.valueOf(hourOfDay) +"-"+ String.valueOf(minute);
+            sel_time= String.valueOf(hourOfDay) +"시 "+ String.valueOf(minute)+"분 ";
 
             time_txt.setText(sel_time);
-            Toast.makeText(getApplicationContext(), hourOfDay + "시 " + minute + "분", Toast.LENGTH_SHORT).show();
+
         }
     };
 }

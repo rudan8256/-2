@@ -13,9 +13,10 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+
             android:id="@+id/write_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
@@ -23,6 +24,8 @@
             android:gravity="center_horizontal"
             android:includeFontPadding="false"
             android:src="@drawable/write_post_ic"
+            android:backgroundTint="#8C8AFD"
+            android:paddingRight="50dp"
           >
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
@@ -48,10 +51,10 @@
         </LinearLayout>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-           android:layout_below="@+id/top_lay"
             android:id="@+id/refresh_board"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_lay">
 
 
             <androidx.recyclerview.widget.RecyclerView

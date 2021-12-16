@@ -8,6 +8,15 @@ public class User {
     private String password; // 비밀번호
     private String nickname;
     private ArrayList<UserToDoList> userToDoLists;
+    private int ex_num;
+
+    public int getEx_num() {
+        return ex_num;
+    }
+
+    public void setEx_num(int ex_num) {
+        this.ex_num = ex_num;
+    }
 
     public ArrayList<UserToDoList> getUserToDoLists() {
         return userToDoLists;
@@ -24,15 +33,17 @@ public class User {
         this.password="";
         this.nickname="";
         this.userToDoLists= new ArrayList<>();
+        this.ex_num = 0;
     }
 
-    public User(String idToken, String emailId, String password,String nickname, ArrayList<UserToDoList>userToDoLists)
+    public User(String idToken, String emailId, String password,String nickname, ArrayList<UserToDoList>userToDoLists, int ex_num)
     {
         this.emailId=emailId;
         this.idToken=idToken;
         this.password=password;
         this.nickname=nickname;
         this.userToDoLists = userToDoLists;
+        this.ex_num = ex_num;
     }
 
 

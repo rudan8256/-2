@@ -36,7 +36,7 @@
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical|right"
-            android:background="@color/purple_200"
+            android:background="#8C8AFD"
 
             android:gravity="center"
             android:includeFontPadding="false"
@@ -145,9 +145,9 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_baseline_image_24"
                     android:layout_marginTop="15dp"
-                    android:backgroundTint="@color/purple_200"
+                    android:background="@drawable/ic_baseline_image_24"
+                    android:backgroundTint="#8C8AFD"
                     android:gravity="center" />
 
             </LinearLayout>
@@ -165,7 +165,7 @@
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/post_it"
                     android:layout_marginTop="15dp"
-                    android:backgroundTint="@color/purple_200"
+                    android:backgroundTint="#8C8AFD"
                     android:gravity="center" />
 
 

@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,14 +19,21 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+
 public class Mainlayout extends AppCompatActivity {
 
     private CardView maplinear,board,oylmpic_list,sport_list;
     private CardView profilecard;
-    private TextView usernick;
+    private TextView usernick,num_list;
     public FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private FirebaseAuth mFirebaseAuth=FirebaseAuth.getInstance();
     FirebaseUser user;
+    User userdata;
+    ArrayList<UserToDoList> dolistData = new ArrayList<>();
+    int ExNum,listNum;
+    LinearLayout lengthview;
+    View exgage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +46,13 @@ public class Mainlayout extends AppCompatActivity {
         sport_list = findViewById(R.id.sport_list);
         board=findViewById(R.id.board);
         usernick=findViewById(R.id.user_nick);
-
+        lengthview=findViewById(R.id.length_view);
+        exgage =findViewById(R.id.ex_gage);
+         num_list=findViewById(R.id.num_list);
 
         user = mFirebaseAuth.getCurrentUser();
+
+
 
 
         mStore.collection("user").document(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -88,6 +101,34 @@ public class Mainlayout extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+
+    @Override
+    public void onStart(){
+        super.onStart();
+
+        mStore.collection("user").document(mFirebaseAuth.getCurrentUser().
+                getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    userdata = task.getResult().toObject(User.class);
+
+                    listNum =  userdata.getUserToDoLists().size();
+                    ExNum = userdata.getEx_num();
+
+                    int ex_len = lengthview.getWidth() * ExNum / 1000;
+
+
+                    exgage.getLayoutParams().width=ex_len;
+                    exgage.setLayoutParams(exgage.getLayoutParams());
+
+
+                    num_list.setText(String.valueOf(listNum));
+
+                }
+            }
+        });
     }
 }

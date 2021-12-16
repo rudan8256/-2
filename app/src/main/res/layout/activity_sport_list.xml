@@ -57,15 +57,40 @@
     </LinearLayout>
 
     <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:textSize="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/sibal"/>
+        <LinearLayout
+            android:id="@+id/link_btn"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@drawable/link_round_blue"
+                android:layout_width="100dp"
+                android:layout_height="100dp">
+                <ImageView
+                    android:backgroundTint="#3C50B1"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/icon_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:textColor="#263061"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="링크 연결"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -37,6 +37,7 @@ public class MyList extends AppCompatActivity {
     private ArrayList<UserToDoList> userToDoLists;
     private MylistAdapter mylistAdapter;
     User userdata;
+    int ExNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class MyList extends AppCompatActivity {
 
 
 
-        getWindow().setStatusBarColor(Color.parseColor("#908EF0"));
+        getWindow().setStatusBarColor(Color.parseColor("#CDCCFB"));
     }
 
     void callFb(){
@@ -100,17 +101,21 @@ public class MyList extends AppCompatActivity {
                                     @Override
                                     public void onClick(View v) {
 
+                                        userToDoLists = userdata.getUserToDoLists();
+                                        ExNum=userdata.getEx_num();
+
                                         if(!userToDoLists.get(pos).getComplete()) {
 
-                                            userToDoLists = userdata.getUserToDoLists();
-
                                             userToDoLists.get(pos).setComplete(true);
-
 
                                             Map inputdata = new HashMap<String, ArrayList<UserToDoList>>();
                                             inputdata.put(FirebaseID.UserToDoList, userToDoLists);
 
+                                            Map inputnum = new HashMap<String, Integer>();
+                                            inputdata.put("ex_num", ExNum+100);
+
                                             mStore.collection("user").document(mAuth.getCurrentUser().getUid()).set(inputdata, SetOptions.merge());
+                                            mStore.collection("user").document(mAuth.getCurrentUser().getUid()).set(inputnum, SetOptions.merge());
 
                                             dialog.dismiss();
 

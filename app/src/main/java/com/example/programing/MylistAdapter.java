@@ -22,6 +22,7 @@ public class MylistAdapter extends RecyclerView.Adapter<MylistAdapter.ViewHolder
     private ArrayList<UserToDoList> mData = null ;
     private MylistAdapter.OnItemClickListener mListener = null;
     private Context context;
+    public HashMap<String,Integer> photoData1 = new HashMap<>();
     public HashMap<String,Integer> photoData = new HashMap<>();
 
     // 아이템 뷰를 저장하는 뷰홀더 클래스.
@@ -103,9 +104,16 @@ public class MylistAdapter extends RecyclerView.Adapter<MylistAdapter.ViewHolder
 
         mappping();
 
-       holder.sport_photo.setImageResource( photoData.get(mData.get(position).getSel_sport().getName()));
+       if(photoData1.containsKey(mData.get(position).getSel_sport().getName()) ){
+           holder.sport_photo.setImageResource( photoData1.get(mData.get(position).getSel_sport().getName()));
+           holder.subject_back.setBackgroundResource(R.drawable.subject_right_round);
+       }
+       else{
+           holder.sport_photo.setImageResource( photoData.get(mData.get(position).getSel_sport().getName()));
+           holder.subject_back.setBackgroundResource(R.drawable.subject_right_round_blue);
+       }
 
-       holder.subject_back.setBackgroundResource(R.drawable.subject_right_round);
+
 
 
     }
@@ -126,32 +134,49 @@ public class MylistAdapter extends RecyclerView.Adapter<MylistAdapter.ViewHolder
 
     void mappping() {
 
-        photoData.put("골볼", R.drawable.pp_goalball);
-        photoData.put("보치아", R.drawable.pp_boccia);
-        photoData.put("배드민턴", R.drawable.pp_badminton);
-        photoData.put("사격", R.drawable.pp_shooting);
-        photoData.put("사이클 도로", R.drawable.pp_cyclingroad);
-        photoData.put("사이클 트랙", R.drawable.pp_cyclingtrack);
+        photoData1.put("골볼", R.drawable.pp_goalball);
+        photoData1.put("보치아", R.drawable.pp_boccia);
+        photoData1.put("배드민턴", R.drawable.pp_badminton);
+        photoData1.put("사격", R.drawable.pp_shooting);
+        photoData1.put("사이클 도로", R.drawable.pp_cyclingroad);
+        photoData1.put("사이클 트랙", R.drawable.pp_cyclingtrack);
 
-        photoData.put("수영", R.drawable.pp_swimming);
-        photoData.put("승마", R.drawable.pp_equestrian);
-        photoData.put("양궁", R.drawable.pp_archery);
-        photoData.put("역도", R.drawable.pp_powerlifting);
-        photoData.put("유도", R.drawable.pp_judo);
-        photoData.put("육상", R.drawable.pp_athleticsframe);
+        photoData1.put("수영", R.drawable.pp_swimming);
+        photoData1.put("승마", R.drawable.pp_equestrian);
+        photoData1.put("양궁", R.drawable.pp_archery);
+        photoData1.put("역도", R.drawable.pp_powerlifting);
+        photoData1.put("유도", R.drawable.pp_judo);
+        photoData1.put("육상", R.drawable.pp_athleticsframe);
 
-        photoData.put("조정", R.drawable.pp_rowing);
-        photoData.put("좌식배구", R.drawable.pp_sittingvolleyball);
-        photoData.put("축구(5인)", R.drawable.pp_football5aside);
-        photoData.put("카느 스프린트", R.drawable.pp_canoesprint);
-        photoData.put("탁구", R.drawable.pp_tabletennis);
-        photoData.put("태권도", R.drawable.pp_taekwondo);
+        photoData1.put("조정", R.drawable.pp_rowing);
+        photoData1.put("좌식배구", R.drawable.pp_sittingvolleyball);
+        photoData1.put("축구(5인)", R.drawable.pp_football5aside);
+        photoData1.put("카느 스프린트", R.drawable.pp_canoesprint);
+        photoData1.put("탁구", R.drawable.pp_tabletennis);
+        photoData1.put("태권도", R.drawable.pp_taekwondo);
 
-        photoData.put("트라이애슬론", R.drawable.pp_triathlon);
-        photoData.put("휠체어농구", R.drawable.pp_wheelchairbasketball);
-        photoData.put("휠체어럭비", R.drawable.pp_wheelchairrugby);
-        photoData.put("휠체어테니스", R.drawable.pp_wheelchairtennis);
-        photoData.put("휠체어펜싱", R.drawable.pp_wheelchairfencing);
+        photoData1.put("트라이애슬론", R.drawable.pp_triathlon);
+        photoData1.put("휠체어농구", R.drawable.pp_wheelchairbasketball);
+        photoData1.put("휠체어럭비", R.drawable.pp_wheelchairrugby);
+        photoData1.put("휠체어테니스", R.drawable.pp_wheelchairtennis);
+        photoData1.put("휠체어펜싱", R.drawable.pp_wheelchairfencing);
+
+        photoData.put(" 축구 ",R.drawable.cnrrn);
+        photoData.put(" 양궁 ",R.drawable.didrnd);
+        photoData.put(" 탁구 ",R.drawable.xkrrn);
+        photoData.put("스케이트보드",R.drawable.tmzpdlxm);
+        photoData.put(" 수영 ",R.drawable.tndud);
+        photoData.put(" 태권도 ",R.drawable.xornjseh);
+
+        photoData.put(" 야구 ",R.drawable.dirn);
+        photoData.put(" 육상 " ,R.drawable.dbrtkd);
+        photoData.put(" 수영 ",R.drawable.tndud);
+        photoData.put(" 펜싱 ",R.drawable.vpstld);
+        photoData.put(" 유도 ",R.drawable.dbeh);
+        photoData.put(" 사격 ",R.drawable.tkrur);
+
+        photoData.put(" 복싱 ",R.drawable.qhrtld);
+        photoData.put(" 배구 ",R.drawable.volleyball);
 
     }
 

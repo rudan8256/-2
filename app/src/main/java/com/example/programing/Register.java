@@ -85,7 +85,7 @@ public class Register extends AppCompatActivity {
                                 FirebaseUser user = mFirebaseAuth.getCurrentUser();
                                 //String idToken, String emailId, String password, String nickname, ArrayList<String> liked_Post
 
-                                User userAccount = new User(user.getUid(),  strEmail, retVal, nickname,new ArrayList<UserToDoList>());
+                                User userAccount = new User(user.getUid(),  strEmail, retVal, nickname,new ArrayList<UserToDoList>(),0);
                                 mStore.collection("user").document(user.getUid()).set(userAccount);
                                 finish();
 
