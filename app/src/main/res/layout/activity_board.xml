@@ -28,10 +28,21 @@
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
         <LinearLayout
+
             android:id="@+id/top_lay"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/btn_back"
+                android:src="@drawable/back_light_arrow_icon_131562"
+                android:paddingRight="20dp"
+                android:layout_width="50dp"
+                android:layout_height="25dp"/>
 
 
         </LinearLayout>

@@ -4,14 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/activity_board.xml" value="0.32708333333333334" />
+        <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/activity_my_list.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/activity_paralympic.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/activity_post_comment.xml" value="0.33" />
+        <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/activity_post_write.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/dialog_mapsetting.xml" value="0.2046875" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/dialog_postwrite_list.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/dialog_setting.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/dialog_sport_setting.xml" value="0.2046875" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/multi_image_item.xml" value="0.2046875" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/mylist_complete.xml" value="0.2046875" />
-        <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/mylistadapter.xml" value="0.2046875" />
+        <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/mylistadapter.xml" value="0.5" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/mylistpick_adapter.xml" value="0.2171875" />
         <entry key="..\:/Users/Trigem/StudioProjects/-2/app/src/main/res/layout/pp_list_item.xml" value="0.2046875" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/bg_indicator_active.xml" value="0.16203703703703703" />
