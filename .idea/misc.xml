@@ -3,71 +3,74 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/82103/AndroidStudioProjects/programing/app/src/main/res/drawable/roundbutton.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/82103/AndroidStudioProjects/programing/app/src/main/res/layout/activity_main.xml" value="0.4296875" />
-        <entry key="..\:/Users/82103/AndroidStudioProjects/programing/app/src/main/res/layout/activity_mainlayout.xml" value="0.4296875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/comment_del.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/dialog_datepick_round.xml" value="0.5046296296296297" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/frag1_btn.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/group_250.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/home_pupleround.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/ic_bi_x.xml" value="0.25277777777777777" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/ic_favorite.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/login_btn_round.xml" value="0.565625" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/login_upround.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/post_item_shape.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/pp_photo_backround.xml" value="0.5046296296296297" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/roundbutton.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/roundwidget.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/sport_photo_backround.xml" value="0.5046296296296297" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/drawable/startbuttonround.xml" value="0.5697916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_board.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_image_zoom.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_main.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_mainlayout.xml" value="0.33" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_my_list.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_paralympic.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_post_write.xml" value="0.2689969604863222" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/activity_register.xml" value="0.25307125307125306" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/dialog_setting.xml" value="0.5" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/map_setting.xml" value="0.2689969604863222" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/-2/app/src/main/res/layout/multi_image_item.xml" value="0.2689969604863222" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/bg_indicator_active.xml" value="0.16203703703703703" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/bg_indicator_inactive.xml" value="0.16203703703703703" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ccomment_retangle.xml" value="0.34882533197139937" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/click_listevent.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/comment_del.xml" value="0.12037037037037036" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/complete_btn.xml" value="0.3203125" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/dialog_datepick_round.xml" value="0.35625" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/dialog_sport_datepick_round.xml" value="0.35625" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/frag1_btn.xml" value="0.12037037037037036" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/group_250.xml" value="0.259375" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/half_rounded_view.xml" value="0.23796296296296296" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/home_bottom_right.xml" value="0.259375" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/home_pupleround.xml" value="0.35625" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/home_up_puple.xml" value="0.35625" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_baseline_crop_free_24.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2824074074074074" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.24444444444444444" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.329417773237998" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.329417773237998" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.29739583333333336" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_carbon_user_avatar_filled.xml" value="0.12037037037037036" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/ic_favorite.xml" value="0.11018518518518519" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/left_round_home.xml" value="0.24537037037037038" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/login_btn_round.xml" value="0.24537037037037038" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/login_upround.xml" value="0.35625" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/mylist_addbtn.xml" value="0.24537037037037038" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/mylist_puple_round.xml" value="0.24537037037037038" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/post_item_shape.xml" value="0.11018518518518519" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/pp_photo_backround.xml" value="0.259375" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/roundbutton.xml" value="0.35625" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/roundwidget.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/sport_click_listevent.xml" value="0.35625" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/sport_photo_backround.xml" value="0.259375" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/startbuttonround.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/subject_right_round.xml" value="0.3171875" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/drawable/twoside_round_bottom.xml" value="0.259375" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_board.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_image_viewpager.xml" value="0.2441123188405797" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_login.xml" value="0.3359375" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_main.xml" value="0.2033514492753623" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_mainlayout.xml" value="0.33" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_my_list.xml" value="0.18" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_notice_board.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_noticeboard.xml" value="0.1" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_paralympic.xml" value="0.22" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_post__comment.xml" value="0.5" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_post_comment.xml" value="0.5715344699777613" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_post_write.xml" value="0.33" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_register.xml" value="0.2667572463768116" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_select.xml" value="0.3359375" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_selects.xml" value="0.3359375" />
-        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/comment_item.xml" value="0.1" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/activity_sport_list.xml" value="0.31614583333333335" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/comment_item.xml" value="0.25" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/dialog_mapsetting.xml" value="0.3359375" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/dialog_setting.xml" value="0.3" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/dialog_sport_setting.xml" value="0.3359375" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/item_post.xml" value="0.25" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/multi_image_item.xml" value="0.1" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/mylist_complete.xml" value="0.33" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/mylistadapter.xml" value="0.33" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/mylistcomplete.xml" value="0.3359375" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/pp_list_item.xml" value="0.75" />
+        <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/layout/recyclerview_item.xml" value="0.29936594202898553" />
         <entry key="..\:/Users/ruddd/AndroidStudioProjects/programing/app/src/main/res/menu/actionbar_notice_board.xml" value="0.33541666666666664" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/drawable/group_250.xml" value="0.1425925925925926" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.1425925925925926" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1425925925925926" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/drawable/login_upround.xml" value="0.26979166666666665" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/drawable/roundbutton.xml" value="0.26979166666666665" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/drawable/roundwidget.xml" value="0.26979166666666665" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/drawable/startbuttonround.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/layout/activity_mainlayout.xml" value="0.2" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/layout/activity_register.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/layout/activity_select.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/layout/activity_start.xml" value="0.264" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/-2/app/src/main/res/layout/item_post.xml" value="0.12310030395136778" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

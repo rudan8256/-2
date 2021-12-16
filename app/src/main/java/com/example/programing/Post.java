@@ -13,6 +13,15 @@ public class Post {
     private Timestamp timestamp;
     private ArrayList<Comment> comments;
     private int coment_Num;
+    private UserToDoList userToDoList;
+
+    public UserToDoList getUserToDoList() {
+        return userToDoList;
+    }
+
+    public void setUserToDoList(UserToDoList userToDoList) {
+        this.userToDoList = userToDoList;
+    }
 
     public int getComent_Num() {
         return coment_Num;
@@ -110,9 +119,12 @@ public class Post {
         this.image_url= new ArrayList<>();
         this.post_id = "";
         this.coment_Num=0;
+        this.userToDoList = new UserToDoList();
     }
 
-    public Post(String writer_id, String title, String contents, String p_nickname, String like, ArrayList<Comment> comments,  ArrayList<String> image_url, Timestamp timestamp,String post_id,int coment_Num) {
+    public Post(String writer_id, String title, String contents, String p_nickname, String like, ArrayList<Comment> comments,  ArrayList<String> image_url,
+                Timestamp timestamp,String post_id,int coment_Num,UserToDoList userToDoList) {
+
         this.writer_id = writer_id;
         this.title = title;
         this.contents = contents;
@@ -123,5 +135,6 @@ public class Post {
         this.image_url = image_url;
         this.post_id=post_id;
         this.coment_Num= coment_Num;
+        this.userToDoList=userToDoList;
     }
 }

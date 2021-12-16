@@ -59,7 +59,7 @@ public class Post_write extends AppCompatActivity {
     private DocumentReference docRef;
     private EditText mTitle, mContents;//제목, 내용
     private String p_nickname;//게시판에 표기할 닉네잉 //이게 가져온 값을 저장하는 임시 변수
-    private TextView post_photo, post_tree, post_gallery;
+    private TextView post_photo, post_tree, post_gallery,post_list;
     private String writer_id;
     private ImageView post_imageView;
     private TextView post_save, btn_back;
@@ -90,9 +90,9 @@ public class Post_write extends AppCompatActivity {
         mContents = findViewById(R.id.Post_write_contents);
         post_save=findViewById(R.id.post_save);
         btn_back=findViewById(R.id.btn_back);
-        post_photo=findViewById(R.id.post_photo);
         post_gallery=findViewById(R.id.post_gallery);
         photo_list  =findViewById(R.id.photo_list);
+        post_list = findViewById(R.id.post_sport_list);
 
 
         storage=FirebaseStorage.getInstance();
@@ -131,7 +131,6 @@ public class Post_write extends AppCompatActivity {
         });
 
 
-
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,6 +143,13 @@ public class Post_write extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SavePost();
+            }
+        });
+
+        post_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
@@ -188,7 +194,9 @@ public class Post_write extends AppCompatActivity {
                     Date date = new Date(datetime);
                     Timestamp timestamp = new Timestamp(date);
 
-                    post[0] = new Post(mAuth.getUid(), mTitle.getText().toString(), mContents.getText().toString(), userAccount.getNickname(), "0",   new ArrayList<>(), image_urllist,timestamp ,PostID,0);
+                    post[0] = new Post(mAuth.getUid(), mTitle.getText().toString(), mContents.getText().toString(),
+                            userAccount.getNickname(), "0",   new ArrayList<>(), image_urllist,timestamp ,PostID,0,new UserToDoList());
+
                     mStore.collection("board").document(PostID).set(post[0]);
 
                 }

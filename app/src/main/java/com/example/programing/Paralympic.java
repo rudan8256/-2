@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,17 +39,17 @@ import java.util.Map;
 
 public class Paralympic extends AppCompatActivity {
 
-    RecyclerView ppRc;
-    ppListAdapter listadapter;
-    LinearLayout listsel_btn,complete_btn;
-    ImageView Backpress;
-    TextView date_txt,time_txt,map_txt,sibal;
+    private RecyclerView ppRc;
+    private  ppListAdapter listadapter;
+    private  LinearLayout listsel_btn,complete_btn;
+    private  ImageView Backpress;
+    private  TextView date_txt,time_txt,map_txt,sibal;
 
-    Calendar calendar = Calendar.getInstance();
-    Calendar minDate = Calendar.getInstance();
-    Calendar maxDate = Calendar.getInstance();
-    String sel_date, sel_time,sel_map;
-    BottomSheetDialog listdialog;
+    private  Calendar calendar = Calendar.getInstance();
+    private  Calendar minDate = Calendar.getInstance();
+    private  Calendar maxDate = Calendar.getInstance();
+    private  String sel_date, sel_time,sel_map;
+    private  BottomSheetDialog listdialog;
 
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -100,10 +102,14 @@ public class Paralympic extends AppCompatActivity {
             list.add(String.format("TEXT %d", i)) ;
         }
 
-        listadapter = new ppListAdapter(s_list) ;
+        listadapter = new ppListAdapter(s_list,getApplicationContext()) ;
         listadapter.notifyDataSetChanged();
         ppRc.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-        ppRc.setAdapter(listadapter) ;
+        ppRc.setAdapter(listadapter);
+
+        LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layoutanim_slide);
+        ppRc.setLayoutAnimation(controller);
+       ppRc.scheduleLayoutAnimation();
 
 
         //뒤로가기
@@ -122,173 +128,191 @@ public class Paralympic extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int pos) {
 
-                //이전에 클릭안하고 처음 클릭한상태 == 진입
+
+                listdialog = new BottomSheetDialog(Paralympic.this);
+                listdialog.setContentView(R.layout.dialog_setting);
+                listdialog.setCanceledOnTouchOutside(true);
+
                 if( ! click && selnum == -1){
 
-                 click=true;
-                 selnum=pos;
+                    click=true;
+                    selnum=pos;
 
                     sibal.setText("클릭함");
-                    completeFunc(s_list.get(pos));
+
 
                 }
                 else if(selnum != pos && click){
                     selnum=pos;
                     sibal.setText("이동함");
-                    completeFunc(s_list.get(pos));
+
                 }
                 else{
                     //이전에 클릭상태에서 풀리는 상태
                     click=false;
                     selnum =-1;
 
-
                     sibal.setText("클릭품");
-
                 }
+
+
+                listsel_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if( click ){
+                            completeFunc(s_list.get(pos));
+                        }
+                        else{
+
+                            Toast.makeText(getApplicationContext(),"종목을 먼저 선택해 주세요",Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                });
+
 
             }
         });
-
-
-
-
-
-    }
-
-    void completeFunc(Sport sel_sport){
-
-
-        listdialog = new BottomSheetDialog(Paralympic.this);
-        listdialog.setContentView(R.layout.dialog_setting);
-        listdialog.setCanceledOnTouchOutside(true);
-
 
 
         listsel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(click)listdialog.show();
-
-                date_txt= listdialog.findViewById(R.id.date_txt);
-                time_txt= listdialog.findViewById(R.id.time_txt);
-                map_txt= listdialog.findViewById(R.id.map_txt);
+                    Toast.makeText(getApplicationContext(),"종목을 먼저 선택해 주세요",Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-                //초기화
-                date_txt.setText("날짜");
-                time_txt.setText("시간");
-                map_txt.setText("장소");
-                sel_date=null;
-                sel_map=null;
-                sel_time=null;
+    }
+
+    void completeFunc(Sport sel_sport){
+
+        listdialog.show();
+
+        date_txt= listdialog.findViewById(R.id.date_txt);
+        time_txt= listdialog.findViewById(R.id.time_txt);
+        map_txt= listdialog.findViewById(R.id.map_txt);
 
 
-                listdialog.findViewById(R.id.date_btn).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        //데이트피커 다이얼로그 생성
-                        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                                Paralympic.this,
-                                new DatePickerDialog.OnDateSetListener() {
-                                    @Override
-                                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
-                                        date_txt.setText(year + "-"+(month+1)+"-"+dayOfMonth);
-                                        sel_date=year + "-"+(month+1)+"-"+dayOfMonth;
-
-                                        Toast.makeText(getApplicationContext(),"select date : "+ year + "-"+(month+1)+"-"+dayOfMonth,Toast.LENGTH_LONG).show();
-                                    }
-                                },
-                                calendar.get(Calendar.YEAR),
-                                calendar.get(Calendar.MONTH),
-                                calendar.get(Calendar.DAY_OF_MONTH)
-                        );
-
-                        datePickerDialog.show();
-                        datePickerDialog.getDatePicker().setMinDate(new Date().getTime());
-
-                    }
-                });
-
-                listdialog.findViewById(R.id.time_btn).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        TimePickerDialog dialog = new TimePickerDialog(Paralympic.this,android.R.style.Theme_Holo_Light_Dialog_NoActionBar, listener, 15, 24, false);
-                        dialog.setTitle("대여시작시간");
-                        dialog.show();
-
-                    }
-                });
-
-                listdialog.findViewById(R.id.map_btn).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Dialog dialog = new Dialog(Paralympic.this);
-                        dialog.setContentView(R.layout.dialog_mapsetting);
-
-                        EditText inputmap_data = dialog.findViewById(R.id.input_map);
+        //초기화
+        date_txt.setText("날짜");
+        time_txt.setText("시간");
+        map_txt.setText("장소");
+        sel_date=null;
+        sel_map=null;
+        sel_time=null;
 
 
-                        dialog.findViewById(R.id.complete_btn_map).setOnClickListener(new View.OnClickListener() {
+        listdialog.findViewById(R.id.date_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //데이트피커 다이얼로그 생성
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        Paralympic.this,
+                        new DatePickerDialog.OnDateSetListener() {
                             @Override
-                            public void onClick(View v) {
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-                                sel_map = inputmap_data.getText().toString();
+                                date_txt.setText(year + "-"+(month+1)+"-"+dayOfMonth);
+                                sel_date=year + "-"+(month+1)+"-"+dayOfMonth;
 
-                                map_txt.setText( sel_map);
-
-                                dialog.dismiss();
+                                Toast.makeText(getApplicationContext(),"select date : "+ year + "-"+(month+1)+"-"+dayOfMonth,Toast.LENGTH_LONG).show();
                             }
-                        });
+                        },
+                        calendar.get(Calendar.YEAR),
+                        calendar.get(Calendar.MONTH),
+                        calendar.get(Calendar.DAY_OF_MONTH)
+                );
 
-                        dialog.show();
-
-                    }
-                });
-
-                //모두다 설정완료
-
-                listdialog.findViewById(R.id.complete_btnL).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        if(null != sel_map && sel_time != null && sel_map != null){
-
-                            mStore.collection("user").document(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    ArrayList<UserToDoList> userToDoLists = (ArrayList<UserToDoList>) task.getResult().get(FirebaseID.UserToDoList);
-
-                                    UserToDoList newDolist = new UserToDoList(sel_date,sel_time,sel_map,sel_sport);
-
-                                    userToDoLists.add(newDolist);
-
-                                    Map inputdata = new HashMap<String,ArrayList<UserToDoList>>();
-                                    inputdata.put(FirebaseID.UserToDoList, userToDoLists);
-
-                                    mStore.collection("user").document(mAuth.getCurrentUser().getUid()).set(inputdata, SetOptions.merge());
-
-                                    listdialog.dismiss();
-                                }
-                            });
-
-
-                        }
-                        else{
-                            Toast.makeText(getApplicationContext(),"세가지 모두 설정해 주십시요",Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-                });
+                datePickerDialog.show();
+                datePickerDialog.getDatePicker().setMinDate(new Date().getTime());
 
             }
         });
+
+        listdialog.findViewById(R.id.time_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TimePickerDialog dialog = new TimePickerDialog(Paralympic.this,android.R.style.Theme_Holo_Light_Dialog_NoActionBar, listener, 15, 24, false);
+                dialog.setTitle("대여시작시간");
+                dialog.show();
+
+            }
+        });
+
+        listdialog.findViewById(R.id.map_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Dialog dialog = new Dialog(Paralympic.this);
+                dialog.setContentView(R.layout.dialog_mapsetting);
+
+                EditText inputmap_data = dialog.findViewById(R.id.input_map);
+
+
+                dialog.findViewById(R.id.complete_btn_map).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        sel_map = inputmap_data.getText().toString();
+
+                        map_txt.setText( sel_map);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+
+            }
+        });
+
+        //모두다 설정완료
+
+        listdialog.findViewById(R.id.complete_btnL).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(null != sel_map && sel_time != null && sel_map != null){
+
+                    mStore.collection("user").document(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if(task.isSuccessful()) {
+                                ArrayList<UserToDoList> userToDoLists = (ArrayList<UserToDoList>) task.getResult().get(FirebaseID.UserToDoList);
+
+                                UserToDoList newDolist = new UserToDoList(sel_date, sel_time, sel_map, sel_sport,false);
+
+                                userToDoLists.add(newDolist);
+
+                                Map inputdata = new HashMap<String, ArrayList<UserToDoList>>();
+                                inputdata.put(FirebaseID.UserToDoList, userToDoLists);
+
+                                mStore.collection("user").document(mAuth.getCurrentUser().getUid()).set(inputdata, SetOptions.merge());
+
+                                listdialog.dismiss();
+                            }
+                        }
+                    });
+
+
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"세가지 모두 설정해 주십시요",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
     }
+
+
+
 
     private TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
         @Override
