@@ -53,6 +53,7 @@ public class Paralympic extends AppCompatActivity {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
    boolean click=false;
+   int selnum=-1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,16 +123,24 @@ public class Paralympic extends AppCompatActivity {
             public void onItemClick(View v, int pos) {
 
                 //이전에 클릭안하고 처음 클릭한상태 == 진입
-                if( ! click){
+                if( ! click && selnum == -1){
 
                  click=true;
+                 selnum=pos;
 
                     sibal.setText("클릭함");
+                    completeFunc(s_list.get(pos));
 
+                }
+                else if(selnum != pos && click){
+                    selnum=pos;
+                    sibal.setText("이동함");
+                    completeFunc(s_list.get(pos));
                 }
                 else{
                     //이전에 클릭상태에서 풀리는 상태
                     click=false;
+                    selnum =-1;
 
 
                     sibal.setText("클릭품");
@@ -142,12 +151,12 @@ public class Paralympic extends AppCompatActivity {
         });
 
 
-       completeFunc();
+
 
 
     }
 
-    void completeFunc(){
+    void completeFunc(Sport sel_sport){
 
 
         listdialog = new BottomSheetDialog(Paralympic.this);
@@ -255,7 +264,7 @@ public class Paralympic extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                     ArrayList<UserToDoList> userToDoLists = (ArrayList<UserToDoList>) task.getResult().get(FirebaseID.UserToDoList);
 
-                                    UserToDoList newDolist = new UserToDoList(sel_date,sel_time,sel_map);
+                                    UserToDoList newDolist = new UserToDoList(sel_date,sel_time,sel_map,sel_sport);
 
                                     userToDoLists.add(newDolist);
 
